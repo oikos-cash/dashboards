@@ -158,10 +158,11 @@ const lookup = async (account) => {
   });
 };
 
-setTimeout(() => {
-  if (window.tronWeb && !input.value) {
+const timer = setInterval(() => {
+  if (window.tronWeb && !input.value && window.tronWeb.defaultAddress.base58) {
     input.value = window.tronWeb.defaultAddress.base58;
     lookup(input.value);
+    clearInterval(timer);
   }
-}, 200);
+}, 100);
 // lookup("TVYGDbvtWv1wPkChzKn5rcQobiHMEN3c3f");
