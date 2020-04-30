@@ -1,0 +1,48 @@
+body {
+  font-family: 'Helvetica';
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: #0b0816;
+  min-height: 50px;
+  img {
+    padding: 8px;
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+input { 
+  width: 300px; 
+  padding: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.flextables {
+  display: flex;
+  > * {
+    width: 50%;
+    
+    table {
+      margin-top: 25px;
+      &:nth-child(1) {
+         th {
+          text-align: right;
+        }
+      }
+      &:nth-child(2) {
+        th {
+          text-align: left;
+        }
+      }
+    }
+  }
+ 
+}

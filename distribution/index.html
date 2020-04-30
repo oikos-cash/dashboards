@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@oikos/oikos-js@0.4.1/dist/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numbro/2.0.5/numbro.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.1.0/dist/frappe-charts.min.iife.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@4.0.39/dist/ethers.min.js"></script>
+  </head>
+  <body>
+    <header>
+
+      <img src="https://docs.oikos.cash/img/logos/oikos-text-logo.svg" />
+
+    </header>
+
+    <main>
+
+      <p><input name="network" placeholder="Enter network (none for mainnet)" />
+        <button name="start">Start</button></p>
+      <section>
+        <div>
+          <p id="network"><strong>Network:</strong> <var>...</var></p>
+          <p class="helper-text">The breakdown of all synths currently issued</p>
+          <table cellpadding=0 cellspacing=0>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Synth</th>
+                <th>Rate</th>
+                <th>Total Supply</th>
+                <th>USD Value</th>
+                <th>Percentage</th>
+                <th>Non-Zero</th>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+
+          <dl>
+              <dt>Total USD value of Synths</dt>
+              <dd id="synthsTotal"></dd>
+              <dt>OKSUSD price</dt>
+              <dd id="oksusdPrice"></dd>
+          </dl>
+        </div>
+      </section>
+      <section id="compare">
+
+        <div><div><h1>Compare Synths</h1><div id="graphCompare"><p class="helper-text">The breakdown of all synths (excluding sUSD)</p></div></div>
+          <!--div><h1>Total Issued Over Time</h1><div id="graphTotalIssued"><p class="helper-text">The total issued synths over time (roughly one day per point)....</p></div></div-->
+
+        </div>
+      </section>
+
+
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
