@@ -1,6 +1,9 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
     <link href="./style.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@oikos/oikos-js@0.4.1/dist/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.min.js"></script>
@@ -10,49 +13,76 @@
   </head>
   <body>
     <header>
-      <a href="/"><img src="https://docs.oikos.cash/img/logos/oikos-text-logo.svg" /></a>
+      <a href="https://dashboard.oikos.cash"><img  class="logo"/></a>
+      <label class="logo-text">DASHBOARD</label>
     </header>
 
     <main>
 
-      <p><input name="network" placeholder="Enter network (none for mainnet)" />
-        <button name="start">Start</button></p>
-      <section>
-        <div>
-          <p id="network"><strong>Network:</strong> <var>...</var></p>
-          <p class="helper-text">The breakdown of all synths currently issued</p>
-          <table cellpadding=0 cellspacing=0>
-            <thead>
-              <tr>
-                <th></th>
-                <th>Synth</th>
-                <th>Rate</th>
-                <th>Total Supply</th>
-                <th>USD Value</th>
-                <th>Percentage</th>
-                <th>Non-Zero</th>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
+      
+        <div class="container" style="margin:20px;"   >
 
-          <dl>
-              <dt>Total USD value of Synths</dt>
-              <dd id="synthsTotal"></dd>
-              <dt>OKSUSD price</dt>
-              <dd id="oksusdPrice"></dd>
-          </dl>
+          <div class="row">
+            <div class="col-sm-4 flex" style="margin-right:10px">
+
+                <p id="network" style="margin-left:10px;margin-top:10px">Network: <strong><var>...</var></strong></p>
+                <dl style="margin-left:10px;margin-top:10px">
+                  <dt>Total USD value of Synths:</dt>
+                  <dd id="synthsTotal"></dd>
+                  <dt>OKS/USD:</dt>
+                  <dd id="oksusdPrice"></dd>
+              </dl>              
+              
+              </div>
+            <div class="col-sm-4 flex"   >
+              <p style="margin-left:10px;margin-top:10px">Enter network (none for mainnet)<br />
+                <input name="network" placeholder="network name" />
+                <button name="start">Start</button></p>
+            </div>
+          </div>
+          
+          <br />
+          <section id="compare">
+ 
+            <div><div> 
+              <h2>Compare Synths</h2>
+                <div id="graphCompare"><p class="helper-text">The breakdown of all synths (excluding sUSD)</p></div></div>
+     
+            </div>          
+          </section>  
+          <div class="row">
+            <div class="col-sm flex">
+ 
+              <table cellpadding=0 cellspacing=0 >
+                <thead>
+                  <tr style="background:none">
+                    <th></th>
+                    <th>Synth</th>
+                    <th>Rate</th>
+                    <th>Total Supply</th>
+                    <th>USD Value</th>
+                    <th>Percentage</th>
+                    <th>Non-Zero</th>
+                </thead>
+                <tbody style="border:1px solid white;padding-left:0px; font-weight:lighter;font-size:13px;">
+                </tbody>
+              </table>
+    
+            </div>
+            <!--<div class="col-sm flex" >
+              <section id="compare">
+ 
+                <div><div> 
+                  <h2>Compare Synths</h2>
+                    <div id="graphCompare"><p class="helper-text">The breakdown of all synths (excluding sUSD)</p></div></div>
+         
+                </div>
+              </section>
+            </div>-->
+          </div>
+
         </div>
-      </section>
-      <section id="compare">
-
-        <div><div><h1>Compare Synths</h1><div id="graphCompare"><p class="helper-text">The breakdown of all synths (excluding sUSD)</p></div></div>
-          <!--div><h1>Total Issued Over Time</h1><div id="graphTotalIssued"><p class="helper-text">The total issued synths over time (roughly one day per point)....</p></div></div-->
-
-        </div>
-      </section>
-
-
+ 
     </main>
 
     <script src="./script.js"></script>

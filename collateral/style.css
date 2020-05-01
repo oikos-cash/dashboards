@@ -1,10 +1,14 @@
 body {
-  font-family: "Helvetica";
+  font-family: "Montserrat";
   padding: 0;
   margin: 0;
+  background-color: #131222;
+  color:#e4e4fb
 }
 header {
   min-height: 50px;
+  padding: 20px;
+
 }
 header img {
   padding: 8px;
@@ -20,18 +24,52 @@ input {
 button {
   cursor: pointer;
 }
+h2 {
+  color:#46bf89;
+ }
+ p {
+  margin-left:10px;
+  margin-top:10px
+ }
+ .container{
+  width: 100%;
+  margin:10px;
+  
+ }
 .flextables {
   display: flex;
 }
 .flextables > * {
   width: 50%;
+  padding: 20px;
 }
 .flextables > * table {
   margin-top: 25px;
+  width:100%;
 }
 .flextables > * table:nth-child(1) th {
   text-align: right;
 }
 .flextables > * table:nth-child(2) th {
   text-align: left;
+}
+.flextables > * table:nth-child(2) td {
+  text-align: left;
+  font-weight:200;
+}
+
+.logo-text{
+  font-size:24px;
+  color:#46bf89;
+
+}
+.logo { 
+  width:180px;
+  content:url("https://raw.githubusercontent.com/oikos-cash/minter/master/public/images/oikos-logo-light.svg");
+}
+
+.flex{
+   margin-bottom:20px;
+   padding: 0px;
+   margin-right:10px
 }

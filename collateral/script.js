@@ -21,7 +21,7 @@ const chartPortfolioContainer = document.querySelector(
 const lookup = async (account) => {
   // const account = input.value;
   summaryTable.innerHTML =
-    '<img src="https://media.giphy.com/media/TvLuZ00OIADoQ/giphy.gif" width=150 />';
+    '<img src="https://media.giphy.com/media/XfDWbxWvjQHwjFgenW/giphy.gif" width=50 />';
   portfolioTable.innerHTML = summaryTable.innerHTML;
   //chartTrendingDebtContainer.innerHTML = summaryTable.innerHTML;
   chartPortfolioContainer.innerHTML = summaryTable.innerHTML;
@@ -56,7 +56,7 @@ const lookup = async (account) => {
 
     const currentCRatio = (1 / collateralRatio) * 100;
     console.log({ collateralRatio });
-
+//${Math.round( (unlockedSnx / collateral) * 100
     summaryTable.innerHTML = `
       <tr><th>OKS Price</th><td>${Number(usdToSnxPrice).toFixed(
         5
@@ -66,17 +66,16 @@ const lookup = async (account) => {
       ).toFixed(2)} USD (${Number(collateral).toFixed(2)} OKS)</td></tr>
       <tr><th>Unlocked OKS</th><td>${Number(
         unlockedSnx * usdToSnxPrice
-      ).toFixed(2)} USD (${Number(unlockedSnx).toFixed(2)} OKS) ${Math.round(
-      (unlockedSnx / collateral) * 100
-    )}</td></tr>
+      ).toFixed(2)} USD (${Number(unlockedSnx).toFixed(2)} OKS) 
+    </td></tr>
       <tr><th>Ratio</th><td>${Number(collateralRatio).toFixed(5)}</td></tr>
-      <tr><th>Current sUSD Balance</th><td>${Number(sUSDBalance).toFixed(
+      <tr><th>sUSD Balance</th><td>${Number(sUSDBalance).toFixed(
         2
       )} sUSD</td></tr>
-      <tr><th>Total Debt Owed</th><td>${Number(debtBalance).toFixed(
+      <tr><th>Total Debt</th><td>${Number(debtBalance).toFixed(
         2
       )} sUSD</td></tr>
-      <tr><th>Current Collateralization Ratio</th><td>${Math.round(
+      <tr><th>Collateralization Ratio</th><td>${Math.round(
         currentCRatio
       )}%</td></tr>
       <tr><th>Fees Available</th><td>${numbro(currentFeesAvailable).format(

@@ -12,7 +12,7 @@ const SUPPORTED_NETWORKS = {
 };
 
 const loadingGIF =
-  '<img src="https://media.giphy.com/media/TvLuZ00OIADoQ/giphy.gif" width=150 />';
+  '<img src="https://media.giphy.com/media/XfDWbxWvjQHwjFgenW/giphy.gif" width=50 />';
 
 const start = async () => {
   tbodyTarget.innerHTML = loadingGIF;
