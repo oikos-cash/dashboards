@@ -88,20 +88,22 @@ const start = async () => {
       )}</td><td>${numbro((100 * totalSupplyInUSD) / totalInUSD).format(
         "0.00"
       )}%</td>
-<td>${totalSupply > 0 ? "✅" : "❌"}</td>
-<td><a target=_blank href="http://tronscan.org/${
-        snxjs[synth].contract.address
-      }">Holders</a></td>
-</tr>`;
+      </tr>`;
     }
   );
+/*
+<td>${totalSupply > 0 ? "✅" : "❌"}</td>
+<td><a target=_blank style="color:#eb4eb4" href="http://tronscan.org/#/address/${
+        window.tronWeb.address.fromHex(snxjs[synth].contract.address)
+      }">Holders</a></td>
 
+      */
   document.querySelector("#synthsTotal").innerHTML = numbro(totalInUSD).format(
     "0,000.00"
-  );
+  ) + `&nbsp;<label style="color:#e4e4f;font-weight:bold">USD</label>`;
   document.querySelector("#oksusdPrice").innerHTML = numbro(snxPrice).format(
     "0.0000"
-  );
+  ) + `&nbsp;<label style="color:#e4e4f;font-weight:bold">USD</label>`;;
 
   const resultsWithValues = results.filter(
     ({ totalSupplyInUSD }) => Number(totalSupplyInUSD) > 10

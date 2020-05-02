@@ -67,10 +67,10 @@ table th {
   padding: 8px;
 }
 table tr:nth-child(even) {
-  background: rgb(107, 104, 104);
+  background: #0e0d14;
 }
 table tr:nth-child(odd) {
-  background: rgb(77, 74, 74);
+  background: #131222);
 }
 
 table td {
@@ -78,7 +78,7 @@ table td {
 }
 dd {
   font-weight:lighter;
-  font-size:13px;
+   
 }
 .helper-text {
   color: #e4e4fb;
