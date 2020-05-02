@@ -57,27 +57,28 @@ const lookup = async (account) => {
     const currentCRatio = (1 / collateralRatio) * 100;
     console.log({ collateralRatio });
 //${Math.round( (unlockedSnx / collateral) * 100
+//      <tr><th>Ratio</th><td>${Number(collateralRatio).toFixed(5)}</td></tr>
+
     summaryTable.innerHTML = `
       <tr><th>OKS Price</th><td>${Number(usdToSnxPrice).toFixed(
         5
-      )} USD</td></tr>
+      )} <b>USD</b></td></tr>
       <tr><th>Total Collateral</th><td>${Number(
         collateral * usdToSnxPrice
-      ).toFixed(2)} USD (${Number(collateral).toFixed(2)} OKS)</td></tr>
+      ).toFixed(2)} <b>USD</b> (${Number(collateral).toFixed(2)} <b>OKS</b>)</td></tr>
       <tr><th>Unlocked OKS</th><td>${Number(
         unlockedSnx * usdToSnxPrice
-      ).toFixed(2)} USD (${Number(unlockedSnx).toFixed(2)} OKS) 
+      ).toFixed(2)}  <b>USD</b> (${Number(unlockedSnx).toFixed(2)}  <b>OKS</b>) 
     </td></tr>
-      <tr><th>Ratio</th><td>${Number(collateralRatio).toFixed(5)}</td></tr>
       <tr><th>sUSD Balance</th><td>${Number(sUSDBalance).toFixed(
         2
-      )} sUSD</td></tr>
+      )}  <b>sUSD</b></td></tr>
       <tr><th>Total Debt</th><td>${Number(debtBalance).toFixed(
         2
-      )} sUSD</td></tr>
+      )} <b>sUSD</b></td></tr>
       <tr><th>Collateralization Ratio</th><td>${Math.round(
         currentCRatio
-      )}%</td></tr>
+      )}<b> %</b></td></tr>
       <tr><th>Fees Available</th><td>${numbro(currentFeesAvailable).format(
         "0,0.00"
       )}</td></tr>
@@ -129,15 +130,15 @@ const lookup = async (account) => {
   holdings
     .sort((a, b) => (Number(a.balanceInUSD) > Number(b.balanceInUSD) ? -1 : 1))
     .forEach(({ synthKey, balanceOf, balanceInUSD, percentage }) => {
-      portfolioTable.innerHTML += `<tr><td>${synthKey}</td><td>${Number(
+      portfolioTable.innerHTML += `<tr><td><b>${synthKey}</b></td><td>${Number(
         balanceOf
-      ).toFixed(4)}</td><td>$${Number(balanceInUSD).toFixed(
+      ).toFixed(4)}</td><td><b>$ </b>${Number(balanceInUSD).toFixed(
         2
-      )}</td><td>${Number(percentage * 100).toFixed(2)}</td></tr>`;
+      )}</td><td>${Number(percentage * 100).toFixed(2)}<b> %</b></td></tr>`;
     });
 
   // summary row
-  portfolioTable.innerHTML += `<tr><td></td><td>Total USD</td><td>${Number(
+  portfolioTable.innerHTML += `<tr><td></td><td><b>Total </b></td><td><b>$ </b>${Number(
     totalInPortfolio
   ).toFixed(2)}</td><td></td></tr>`;
 
