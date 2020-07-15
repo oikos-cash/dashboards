@@ -14,7 +14,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/@oikos/oikos-js@0.4.1/dist/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@oikos/oikos-js@0.6.4/dist/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numbro/2.0.5/numbro.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.1.0/dist/frappe-charts.min.iife.js"></script>
@@ -22,67 +22,63 @@
   </head>
   <body>
     <header>
-      <a href="https://dashboard.oikos.cash"><img  class="logo"/></a>
+      <a href="https://dashboard.oikos.cash"><img class="logo" /></a>
       <label class="logo-text">DASHBOARD</label>
     </header>
 
     <main>
-      <div class="container" >
-
-      <div class="row">
-        <div class="col-sm flex"  >
- 
-          <p >Your account<br />
-            <input name="address" placeholder="Enter Tron Address" />  
+      <div class="container">
+        <div class="row">
+          <div class="col-sm flex">
+            <p>
+              Your account<br />
+              <input name="address" placeholder="Enter Tron Address" />
+            </p>
+          </div>
         </div>
-
-        </div>
-      </div>      
+      </div>
 
       <div class="flextables">
-        <div class="container" style="width: 100%;margin:10px;">
-
+        <div class="container" style="width: 100%; margin: 10px;">
           <div class="row">
-            <div class="col-sm">
-            </div>
-            <div class="col-sm" >
-              
-            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm"></div>
           </div>
           <br />
           <div class="row">
-            <div class="col-sm flex"  >
-              <div style="padding:10px;">
+            <div class="col-sm flex">
+              <div style="padding: 10px;">
                 <h2>Summary</h2>
                 <table></table>
                 <section></section>
               </div>
             </div>
 
-            <div class="col-sm flex" >
-              <div style="padding:10px;">
+            <div class="col-sm flex">
+              <div style="padding: 10px;">
                 <h2>Holdings</h2>
                 <table></table>
                 <section></section>
               </div>
-
             </div>
           </div>
-
         </div>
-
-      </div>      
+      </div>
 
       <script src="./script.js"></script>
     </main>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163808255-1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-163808255-1"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'UA-163808255-1');
+      gtag("config", "UA-163808255-1");
     </script>
-  
   </body>
 </html>
