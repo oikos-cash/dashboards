@@ -1,7 +1,14 @@
-const snxjs = new OikosJs.OikosJs();
+const SUPPORTED_NETWORKS = {
+  mainnet: 56,
+  shasta: 2,
+};
+
+const networkId = SUPPORTED_NETWORKS['mainnet'];
+const snxjs = new OikosJs.OikosJs({networkId});
 const { formatBytes32String } = OikosJs.OikosJs.utils;
 const { synths } = snxjs.contractSettings;
 const input = document.querySelector("input[name=address]");
+
 input.addEventListener("change", () => {
   lookup(input.value);
 });
@@ -33,19 +40,21 @@ const lookup = async (account) => {
       snxjs.Oikos.transferableOikos(account),
       snxjs.Oikos.collateral(account),
       snxjs.Oikos.collateralisationRatio(account),
-      snxjs.sUSD.balanceOf(account),
-      snxjs.Oikos.debtBalanceOf(account, formatBytes32String("sUSD")),
+      snxjs.oUSD.balanceOf(account),
+      snxjs.Oikos.debtBalanceOf(account, formatBytes32String("oUSD")),
       // TODO: currencyKey here is just for currency conversion of total
       // fees?
-      snxjs.FeePool.feesAvailable(account, formatBytes32String("sUSD")),
+      snxjs.FeePool.feesAvailable(account, formatBytes32String("oUSD")),
     ]);
+
+    console.log(snxjs)
     const [
       issuanceRatio,
       usdToSnxPrice,
       unlockedSnx,
       collateral,
       collateralRatio,
-      sUSDBalance,
+      oUSDBalance,
       debtBalance,
       [currentFeesAvailable, currentRewardsAvailable],
     ] = results.map((input) =>
@@ -70,12 +79,12 @@ const lookup = async (account) => {
         unlockedSnx * usdToSnxPrice
       ).toFixed(2)}  <b>USD</b> (${Number(unlockedSnx).toFixed(2)}  <b>OKS</b>) 
     </td></tr>
-      <tr><th>sUSD Balance</th><td>${Number(sUSDBalance).toFixed(
+      <tr><th>oUSD Balance</th><td>${Number(oUSDBalance).toFixed(
         2
-      )}  <b>sUSD</b></td></tr>
+      )}  <b>oUSD</b></td></tr>
       <tr><th>Total Debt</th><td>${Number(debtBalance).toFixed(
         2
-      )} <b>sUSD</b></td></tr>
+      )} <b>oUSD</b></td></tr>
       <tr><th>Collateralization Ratio</th><td>${Math.round(
         currentCRatio
       )}<b> %</b></td></tr>
@@ -102,7 +111,7 @@ const lookup = async (account) => {
       snxjs.ExchangeRates.effectiveValue(
         formatBytes32String(name),
         balances[i],
-        formatBytes32String("sUSD")
+        formatBytes32String("oUSD")
       )
     )
   );

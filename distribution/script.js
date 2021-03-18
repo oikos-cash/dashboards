@@ -141,7 +141,7 @@ const start = async () => {
   const totalIssuedPromises = [];
   for (i = 0; i < 10; i++) {
     const blockTag = Number(currentBlock) - 6000*i; // approx 1 day
-    totalIssuedPromises.unshift(snxjs.Oikos.contract.totalIssuedSynths(toUtf8Bytes('sUSD'), { blockTag }).then(res => ({
+    totalIssuedPromises.unshift(snxjs.Oikos.contract.totalIssuedSynths(toUtf8Bytes('oUSD'), { blockTag }).then(res => ({
       rate: formatEther(res),
       block: blockTag
     })).catch(() => {}));
