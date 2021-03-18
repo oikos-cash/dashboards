@@ -25,6 +25,7 @@ const chartPortfolioContainer = document.querySelector(
   ".flextables *:nth-child(2) section"
 );
 
+ 
 const lookup = async (account) => {
   // const account = input.value;
   summaryTable.innerHTML =
@@ -167,11 +168,14 @@ const lookup = async (account) => {
   });
 };
 
-const timer = setInterval(() => {
-  if (window.tronWeb && !input.value && window.tronWeb.defaultAddress.base58) {
-    input.value = window.tronWeb.defaultAddress.base58;
-    lookup(input.value);
-    clearInterval(timer);
+const timer = setInterval(async () => {
+  if (window.ethereum && !input.value ) {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      input.value = accounts[0];
+      lookup(input.value);
+      clearInterval(timer);
+  } else {
+      await window.ethereum.enable();
   }
 }, 100);
 // lookup("TVYGDbvtWv1wPkChzKn5rcQobiHMEN3c3f");
