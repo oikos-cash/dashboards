@@ -7,7 +7,7 @@ const graphTarget = document.querySelector("#graphCompare");
 const networkTarget = document.querySelector("#network var");
 
 const SUPPORTED_NETWORKS = {
-  mainnet: 1,
+  mainnet: 56,
   shasta: 2,
 };
 
@@ -27,8 +27,8 @@ const start = async () => {
   networkTarget.innerHTML = network;
 
   const networkId = SUPPORTED_NETWORKS[network];
-  const snxjs = new SynthetixJs.SynthetixJs({ networkId });
-  const toUtf8Bytes = SynthetixJs.SynthetixJs.utils.formatBytes32String;
+  const snxjs = new OikosJs.OikosJs({ networkId });
+  const toUtf8Bytes = OikosJs.OikosJs.utils.formatBytes32String;
   // const formatEther = (n) => n.toString(); //;snxjs.utils.formatEther;
 
   // const fromBlock = blockTarget.value;
@@ -68,6 +68,8 @@ const start = async () => {
     })
   );
 
+  console.log(results)
+
   results = results.sort((a, b) =>
     a.totalSupplyInUSD > b.totalSupplyInUSD ? -1 : 1
   );
@@ -106,7 +108,7 @@ const start = async () => {
   ) + `&nbsp;<label style="color:#e4e4f;font-weight:bold">USD</label>`;;
 
   const resultsWithValues = results.filter(
-    ({ totalSupplyInUSD }) => Number(totalSupplyInUSD) > 10
+    ({ totalSupplyInUSD }) => Number(totalSupplyInUSD) >= 0
   );
 
   const datasets = [
@@ -119,7 +121,9 @@ const start = async () => {
   ];
 
   const labels = resultsWithValues.slice(0, 10).map(({ synth }) => synth);
+
   console.log({ datasets, labels });
+
   new frappe.Chart(graphTarget, {
     title: "Top 10 Synth Breakdown",
     data: {
@@ -137,7 +141,7 @@ const start = async () => {
   const totalIssuedPromises = [];
   for (i = 0; i < 10; i++) {
     const blockTag = Number(currentBlock) - 6000*i; // approx 1 day
-    totalIssuedPromises.unshift(snxjs.Synthetix.contract.totalIssuedSynths(toUtf8Bytes('sUSD'), { blockTag }).then(res => ({
+    totalIssuedPromises.unshift(snxjs.Oikos.contract.totalIssuedSynths(toUtf8Bytes('sUSD'), { blockTag }).then(res => ({
       rate: formatEther(res),
       block: blockTag
     })).catch(() => {}));
@@ -148,7 +152,7 @@ const start = async () => {
   console.log(totalIssued);
 
   new frappe.Chart(graphTotalIssuedTarget, {
-    title: 'Synthetix.totalIssuedSynths over time (by block number, in millions)',
+    title: 'Oikos.totalIssuedSynths over time (by block number, in millions)',
     data: {
       labels: totalIssued.filter(e => e).map(({ block }) => block/1e6),
       datasets: [

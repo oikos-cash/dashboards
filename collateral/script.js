@@ -1,5 +1,5 @@
-const snxjs = new SynthetixJs.SynthetixJs();
-const { formatBytes32String } = SynthetixJs.SynthetixJs.utils;
+const snxjs = new OikosJs.OikosJs();
+const { formatBytes32String } = OikosJs.OikosJs.utils;
 const { synths } = snxjs.contractSettings;
 const input = document.querySelector("input[name=address]");
 input.addEventListener("change", () => {
@@ -28,13 +28,13 @@ const lookup = async (account) => {
 
   try {
     const results = await Promise.all([
-      snxjs.SynthetixState.issuanceRatio(),
+      snxjs.OikosState.issuanceRatio(),
       snxjs.ExchangeRates.rateForCurrency(formatBytes32String("OKS")),
-      snxjs.Synthetix.transferableSynthetix(account),
-      snxjs.Synthetix.collateral(account),
-      snxjs.Synthetix.collateralisationRatio(account),
+      snxjs.Oikos.transferableOikos(account),
+      snxjs.Oikos.collateral(account),
+      snxjs.Oikos.collateralisationRatio(account),
       snxjs.sUSD.balanceOf(account),
-      snxjs.Synthetix.debtBalanceOf(account, formatBytes32String("sUSD")),
+      snxjs.Oikos.debtBalanceOf(account, formatBytes32String("sUSD")),
       // TODO: currencyKey here is just for currency conversion of total
       // fees?
       snxjs.FeePool.feesAvailable(account, formatBytes32String("sUSD")),
