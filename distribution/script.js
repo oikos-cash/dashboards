@@ -56,6 +56,9 @@ const start = async () => {
       const rateIsFrozen = await snxjs.ExchangeRates.rateIsFrozen(
         toUtf8Bytes(synth)
       );
+      console.log(snxjs.ExchangeRates)
+      console.log(`rate for ${synth} is frozen: ${rateIsFrozen}`)
+
       console.log(synth, rateIsFrozen);
       return {
         synth,
