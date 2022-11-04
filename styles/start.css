@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 34px;
   line-height: 40px;
   margin-bottom: 50px;
-  color: #46bf89; }
+  color: #f8bd45; }
   @media (max-width: 767.98px) {
     .text-big {
       font-size: 20px;
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #2deb96 !important; }
 
 .color-light-green {
-  color: #46bf89 !important; }
+  color: #f8bd45 !important; }
 
 .color-blue {
   color: #021890 !important; }
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-size: 40px;
   line-height: 48px;
-  color:#46bf89;
+  color:#f8bd45;
   letter-spacing: 0.4px;
   margin-bottom: 45px; }
   @media (max-width: 767.98px) {
@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
     left: -2%;
     top: 2%; }
   .diamond.green:before, .color-light-green .diamond:before {
-    background-color: #46bf89; }
+    background-color: #f8bd45; }
   .diamond.red:before, .color-red .diamond:before {
     background-color: #f14747; }
   .diamond.blue:before, .color-light-blue .diamond:before {
@@ -342,7 +342,7 @@ a {
 }
   a:hover {
     text-decoration: none; 
-  color: #46bf89;}
+  color: #f8bd45;}
 
 .noscroll {
   overflow: hidden; }
@@ -585,7 +585,7 @@ a {
   width: 100%;
   overflow: hidden;
   position: relative;
-  background-color: #46bf89; }
+  background-color: #f8bd45; }
   @media (max-width: 767.98px) {
     .team-image {
       margin-bottom: 20px; } }
@@ -683,7 +683,7 @@ a {
   /* iPad Pro portrait */
   /* Kindle Fire portrait */ }
   .wallet-section a {
-    color: #46BF89; }
+    color: #f8bd45; }
   .wallet-section p {
     font-size: 22px; }
   .wallet-section h1 {
@@ -922,7 +922,7 @@ ul.diamond-list {
       top: 9px;
       width: 7px;
       height: 7px;
-      background-color: #46bf89;
+      background-color: #f8bd45;
       transform: rotate(45deg); }
 
 ol {
@@ -1323,7 +1323,7 @@ ol {
       box-shadow: none; }
 
 .btn-primary-outline {
-  color: #46BF89;
+  color: #f8bd45;
   background-color: transparent;
   border-color: #2deb96; }
   .btn-primary-outline:hover, .btn-primary-outline:focus, .btn-primary-outline:active {
@@ -1333,7 +1333,7 @@ ol {
   .btn-primary-outline:focus, .btn-primary-outline.focus {
     box-shadow: none; }
   .btn-primary-outline.disabled, .btn-primary-outline:disabled {
-    color: #46BF89;
+    color: #f8bd45;
     background-color: transparent;
     border-color: #2deb96; }
   .btn-primary-outline:not(:disabled):not(.disabled):active,
@@ -1369,7 +1369,7 @@ ol {
       box-shadow: none; }
 
 .nav-pills .nav-link {
-  color: #46BF89;
+  color: #f8bd45;
   background-color: #e0fcf0;
   border-color: #e0fcf0;
   font-size: 16px;
@@ -1382,7 +1382,7 @@ ol {
   .nav-pills .nav-link:focus, .nav-pills .nav-link.focus {
     box-shadow: none; }
   .nav-pills .nav-link.disabled, .nav-pills .nav-link:disabled {
-    color: #46BF89;
+    color: #f8bd45;
     background-color: #e0fcf0;
     border-color: #e0fcf0; }
   .nav-pills .nav-link:not(:disabled):not(.disabled):active,
@@ -2522,7 +2522,7 @@ label {
   .roadmap-finish {
     position: relative; }
     .roadmap-finish .point-title {
-      color: #46bf89; }
+      color: #f8bd45; }
     .roadmap-finish .point-text:before {
       background-color: #2deb96; }
     .roadmap-finish .point-text .point-desc {
