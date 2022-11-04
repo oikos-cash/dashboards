@@ -134,7 +134,7 @@ const start = async () => {
       datasets,
     },
     type: "bar",
-    colors: ["#7cd6fd", "#743ee2"],
+    colors: ["#f8bd45", "#8d6108"],
   });
 
   /* Note: no longer works without a provider that supports blockTag (an archive node)

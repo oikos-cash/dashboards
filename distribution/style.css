@@ -2,7 +2,7 @@ body {
   font-family: "Montserrat";
   padding: 0;
   margin: 0;
-  background-color: #131222;
+  background-color: #070707;
   color:#e4e4fb
 }
 header {
@@ -35,14 +35,14 @@ button {
   padding: 10px 20px;
   font-size: 14px;
   border-radius: 4px;
-  background-color: #004433;
+  background-color: #424242;
   color: white;
   font-weight: bold;
   opacity: 0.8;
   cursor: pointer;
 }
 h2 {
-  color:#46bf89;
+  color:#f8bd45;
   font-size:24px;
 }
 button:hover {
@@ -86,12 +86,12 @@ dd {
 }
 .logo { 
   width:180px;
-  content:url("https://raw.githubusercontent.com/oikos-cash/minter/master/public/images/oikos-logo-light.svg");
+  content:url("https://raw.githubusercontent.com/oikos-cash/home/50325dfe73def53671d13526599c38e1d727b82f/src/assets/img/oikos-type.svg");
 }
 
 .logo-text{
   font-size:24px;
-  color:#46bf89;
+  color:#f8bd45;
 
 }
 
